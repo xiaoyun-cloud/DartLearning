@@ -55,6 +55,4 @@ void main() {
   // 查找字符串最后一次出现的位置
   print(strFind.lastIndexOf(
       'o')); // 找‘o’ ,‘lastIndexOf’是查找字符串最后一次出现的位置的方法,返回一个子串在父串中最后一次出现的位置(人话:从右往左找)
-
-  // end
 }
