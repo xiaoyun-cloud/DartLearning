@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 void main() {
   // 数据类型String,单双引号都可以,三个引号可以包含换行符
   // 需要阅读常见的API文档

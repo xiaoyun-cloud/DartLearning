@@ -9,9 +9,11 @@ void main() {
   print(flag2);
   //布尔类型变量可以作为条件判断
   var flag3;
-  if (flag3 == null) {
-    print("真");
-  } else {
-    print("假");
-  }
+  print("真");
+  var n1 = 0 / 0;
+  print(n1); //输出为NaN,是not a number缩写,表示不是一个数字
+  print(n1.isNaN); //判断n1是否为非数字,是则输出true
+  print(n1.)
 }
+
+
