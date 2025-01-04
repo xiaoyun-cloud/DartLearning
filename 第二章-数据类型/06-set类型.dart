@@ -11,4 +11,6 @@ void main() {
   fruits.add('orange');
   print(fruits);
   print(fruits.toList());
+  //set方法
+  print(fruits.contains('apple'));
 }

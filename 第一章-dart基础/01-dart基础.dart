@@ -226,6 +226,24 @@ void main() {
 // 	•	逻辑运算符：&& || !
 // 	•	条件运算符：condition ? expr1 : expr2
 // 	•	空值合并运算符：?? 和 ??=
+ 
+void main() {
+  var i = 6;
+  var r = 2;
+ 
+  //加法：
+  print('${i + r}'); //输出：8
+  //减法
+  print('${i - r}'); //输出：4
+  //乘法
+  print('${i * r}'); //输出：12
+  //除法
+  print('${i / r}'); //输出：3.0
+  //取模运算
+  print('${i % r}'); //输出：0
+  //整除
+  print('${i ~/ r}'); //输出：3
+}
 
 void main() {
   var name;
