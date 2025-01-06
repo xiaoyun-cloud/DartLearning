@@ -34,6 +34,7 @@ void main() {
   var a1 = 1;
   var b1 = 2;
   print(a1?.b1); //1?.b1表示a1?.b1，如果a1为空，则返回null，如果a1不为空，则返回a1.b1
+  //a1 是一个整数类型 (int)，而你尝试通过 a1?.b1 访问 b1 属性。由于 int 类型没有 b1 属性，因此会报错。
 
   //加减乘除jian cheng chu
   print(1 + 2); // 3
@@ -56,9 +57,10 @@ void main() {
     print("不是list");
   }
 
-  //避空运算符
-  String name = null; //表示name为空
-  print(name ?? "空"); //表明name为空时，返回"空",如果name不为空，返回name,新的赋值则会失败
+  // 避空运算符
+  String? name =
+      null; // 表示 name 为空,通过在 String 后面添加 ?，声明 name 是一个可空的 String 类型，这样就可以将 null 赋值给 name
+  print(name ?? "空"); // 表明 name 为空时，返回 "空"；如果 name 不为空，返回 name
 
   //赋值运算符
   int a = 1; //表示a为1

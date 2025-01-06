@@ -17,6 +17,7 @@ void main() {
   print(n1.isInfinite); //判断n1是否为无穷大,是则输出true
   print(n1.isNegative); //判断n1是否为负数,是则输出true
   print(n1.isFinite); //判断n1是否为有限数,是则输出true
-  print(n1.isEven); //判断n1是否为偶数,是则输出true
-  print(n1.isOdd); //判断n1是否为奇数,是则输出true
+  int n2 = 4; // 假设 n2 是一个整数
+  print(n2.isEven); // 判断 n2 是否为偶数, 是则输出 true
+  print(n2.isOdd); // 判断 n2 是否为奇数, 是则输出 true
 }

@@ -1,27 +1,23 @@
 
 main(){
   print ('hello ward');//记得要加分号作为每一句的结束
-}
+
 //main 作为引入函数,所有的需要执行的代码都要放到入口处
 // 选取行后，采用CTRL+/ 快速注释
 
 //文件名称最好不含有中文，空格
 //没有返回值的入口方法如下,表示main方法没有返回值
 
-Function setData:void(){
-}
 // ---------------
 //dart中定义变量可以通过var关键字可以通过类型来申明变量
 // 也可不定义类型，让其自动推断，dart有类型校验
 // 也可以采用String str = 'this is var'
 // dart中定义变量可以通过var关键字可以通过类型来申明变量
-  main(){
   var str='hello';
   var num=1234;
-  String str='hi';
-  print (str);
+  print(str);
   int mynum=1234;
-}
+
 //----------------------
 // Dart的命名规则：
 // 1、变量名称必须由数字、字母、下划线和美元符($)组成。
@@ -37,8 +33,6 @@ Function setData:void(){
 // 常量 不可改变
   const PI=3.14159;
 final //常量
-  final PI=3.14159
-  
   final a =new DateTime.now();
   print(a);
 
@@ -61,14 +55,12 @@ void main() {
 
 // 变量声明
 
-void main() {
-  var name = 'Dart'; // 自动推断为 String 类型
-  int age = 10; // 整数类型
-  double height = 1.75; // 浮点数类型
-  bool isLearning = true; // 布尔值
-  String greeting = 'Hello'; // 字符串
-  dynamic anything = 123; // 动态类型，可以赋值任意类型
-}
+var name = 'Dart'; // 自动推断为 String 类型
+int age = 10; // 整数类型
+double height = 1.75; // 浮点数类型
+bool isLearning = true; // 布尔值
+String greeting = 'Hello'; // 字符串
+dynamic anything = 123; // 动态类型，可以赋值任意类型
 
 	// •	var：自动推断类型。
 	// •	dynamic：运行时确定类型。
@@ -85,44 +77,38 @@ void main() {
 
 // 条件语句
 
-void main() {
-  int score = 85;
-  if (score >= 90) {
-    print('A');
-  } else if (score >= 80) {
-    print('B');
-  } else {
-    print('C');
-  }
+int score = 85;
+if (score >= 90) {
+  print('A');
+} else if (score >= 80) {
+  print('B');
+} else {
+  print('C');
 }
 
 // 循环
 
-void main() {
-  for (var i = 0; i < 5; i++) {
-    print('Count: $i');
-  }
+for (var i = 0; i < 5; i++) {
+  print('Count: $i');
+}
 
-  var list = [1, 2, 3];
-  for (var item in list) {
-    print(item);
-  }
+var list = [1, 2, 3];
+for (var item in list) {
+  print(item);
+}
 
-  int count = 0;
-  while (count < 3) {
-    print('While loop: $count');
-    count++;
-  }
+int count = 0;
+while (count < 3) {
+  print('While loop: $count');
+  count++;
 }
 
 // 4. 函数
 
 // 定义和调用
 
-void main() {
-  greet('Dart');
-  print(add(3, 5));
-}
+greet('Dart');
+print(add(3, 5));
 
 void greet(String name) {
   print('Hello, $name!');
@@ -134,9 +120,7 @@ int add(int a, int b) {
 
 // 可选参数
 
-void main() {
-  printUserInfo('Alice', age: 25);
-}
+printUserInfo('Alice', age: 25);
 
 void printUserInfo(String name, {int? age, String? city}) {
   print('Name: $name, Age: $age, City: $city');
@@ -153,27 +137,21 @@ int square(int x) => x * x;
 
 // 列表（List）
 
-void main() {
-  var numbers = [1, 2, 3];
-  numbers.add(4);
-  print(numbers); // [1, 2, 3, 4]
-}
+var numbers = [1, 2, 3];
+numbers.add(4);
+print(numbers); // [1, 2, 3, 4]
 
 // 集合（Set）
 
-void main() {
-  var set = {1, 2, 3};
-  set.add(2); // 不会重复
-  print(set); // {1, 2, 3}
-}
+var set = {1, 2, 3};
+set.add(2); // 不会重复
+print(set); // {1, 2, 3}
 
 // 映射（Map）
 
-void main() {
-  var map = {'name': 'Dart', 'age': 10};
-  map['city'] = 'San Francisco';
-  print(map); // {name: Dart, age: 10, city: San Francisco}
-}
+var map = {'name': 'Dart', 'age': 10};
+map['city'] = 'San Francisco';
+print(map); // {name: Dart, age: 10, city: San Francisco}
 
 // 6. 类与对象
 
@@ -209,15 +187,13 @@ Future<String> fetchData() async {
 
 // 8. 异常处理
 
-void main() {
-  try {
-    int result = 10 ~/ 0;
-    print(result);
-  } catch (e) {
-    print('Error: $e');
-  } finally {
-    print('Finally block');
-  }
+try {
+  int result = 10 ~/ 0;
+  print(result);
+} catch (e) {
+  print('Error: $e');
+} finally {
+  print('Finally block');
 }
 
 // 9. 运算符
@@ -227,31 +203,27 @@ void main() {
 // 	•	条件运算符：condition ? expr1 : expr2
 // 	•	空值合并运算符：?? 和 ??=
  
-void main() {
-  var i = 6;
-  var r = 2;
+var i = 6;
+var r = 2;
  
-  //加法：
-  print('${i + r}'); //输出：8
-  //减法
-  print('${i - r}'); //输出：4
-  //乘法
-  print('${i * r}'); //输出：12
-  //除法
-  print('${i / r}'); //输出：3.0
-  //取模运算
-  print('${i % r}'); //输出：0
-  //整除
-  print('${i ~/ r}'); //输出：3
-}
+//加法：
+print('${i + r}'); //输出：8
+//减法
+print('${i - r}'); //输出：4
+//乘法
+print('${i * r}'); //输出：12
+//除法
+print('${i / r}'); //输出：3.0
+//取模运算
+print('${i % r}'); //输出：0
+//整除
+print('${i ~/ r}'); //输出：3
 
-void main() {
-  var name;
-  print(name ?? 'Default'); // 输出: Default
+var name;
+print(name ?? 'Default'); // 输出: Default
 
-  name ??= 'Assigned';
-  print(name); // 输出: Assigned
-}
+name ??= 'Assigned';
+print(name); // 输出: Assigned
 
 // 10. 空安全
 
@@ -266,6 +238,4 @@ print(age); // 输出: null
 
 String? name;
 print(name!); // 若 name 为 null 会抛出异常
-
-
-  p ri
+}
