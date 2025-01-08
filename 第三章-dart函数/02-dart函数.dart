@@ -19,6 +19,16 @@ void main() {
   ]; //表示遍历fruits,并将每个元素传递给myPrint2,forEach方法接受一个箭头函数作为参数
   //什么是foreach?表示遍历fruits,并将每个元素传递给myPrint2,forEach方法接受一个箭头函数作为参数
   //箭头函数,即=>,表示返回值,不能写结束符号,即;
+
+  //立即执行函数
+  ((int n) {
+    print('立即执行函数');
+  })(17); //表示立即执行函数,传递参数17
+
+  //函数作为参数
+  void printInfo(String name, int age) {
+    print('Name: $name, Age: $age');
+  }
 }
 
 // 示例函数声明
