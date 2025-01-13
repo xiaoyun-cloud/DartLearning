@@ -1,20 +1,20 @@
 import 'DB.dart';
 
-class MySql implements DB {
+class MsSql implements DB {
   late String uri;
   add(String data) {
-    print("MySql add");
+    print("MsSql add" + data);
   }
 
   save() {
-    print("MySql save");
+    print("MsSql save");
   }
 
   delete() {
-    print("MySql delete");
+    print("MsSql delete");
   }
 
   update() {
-    print("MySql update");
+    print("MsSql update");
   }
 }
