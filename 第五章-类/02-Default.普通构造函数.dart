@@ -1,3 +1,44 @@
+//首先, 定义一个类
+class Person {
+  String name = '张三';
+  int age = 20; //通过class方法定义类的属性
+//类的方法构造函数
+  void getInfo() {
+    print('我是${name},今年${age}岁');
+  }
+}
+//什么是实例化?实例化指的是根据一个类创建一个对象的过程。类就像一个蓝图，而实例化就是用这个蓝图去建造一个具体的“房子”——也就是对象。
+void main() {
+  // 实例化 Person 类，创建一个名为 john 的对象
+  var zhangsan = Person('张三2', 25);
+print(zhangsan.getInfo());
+  // print(zhangsan.name);  // 输出：John
+  // print(zhangsan.age);   // 输出：25
+}
+修复后的代码
+-----
+class Person {
+  String name;
+  int age;
+
+  // 带参数的构造函数
+  Person(this.name, this.age);  // 使用构造函数参数来初始化属性
+
+  // 类的方法
+  void getInfo() {
+    print('我是${name}, 今年${age}岁');
+  }
+}
+
+void main() {
+  // 实例化 Person 类，创建一个名为 zhangsan 的对象
+  var zhangsan = Person('张三2', 25);
+
+  // 调用 getInfo 方法
+  zhangsan.getInfo();  // 输出：我是张三2, 今年25岁
+}
+-----
+/*
 class Point {
   int x; // 定义一个整数类型的成员变量 x
   int y; // 定义一个整数类型的成员变量 y
