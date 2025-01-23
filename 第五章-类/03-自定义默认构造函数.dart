@@ -68,3 +68,4 @@ void main() {
   person1.getInfo();   // 输出: 姓名: 张三, 年龄: null
   person2.getInfo();   // 输出: 姓名: null, 年龄: 20
 }
+//end
