@@ -251,3 +251,13 @@ void loadData() async {
 }
 
 以上代码涵盖了 Flutter 开发的核心语法基础。如果有更具体的内容需要深入了解，请告诉我！
+
+8. 错误处理
+在 Flutter 中，错误处理是通过 try-catch 语句实现的。
+在 Flutter 中，错误处理是通过 try-catch 语句实现的。以下是一个简单的示例：
+void main() {
+    try {
+        int result = 10 ~/ 0;
+        print('Result: $result');
+    }
+}
