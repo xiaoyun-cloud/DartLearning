@@ -261,3 +261,182 @@ void main() {
         print('Result: $result');
     }
 }
+
+### 9. 动画与过渡
+
+Flutter 提供了强大的动画系统，支持创建平滑的用户界面交互。
+
+#### 基本动画
+
+```dart
+class AnimatedContainerExample extends StatefulWidget {
+  @override
+  _AnimatedContainerExampleState createState() => _AnimatedContainerExampleState();
+}
+
+class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
+  double _width = 50;
+  double _height = 50;
+  Color _color = Colors.blue;
+
+  void _changeSize() {
+    setState(() {
+      _width = _width == 50 ? 200 : 50;
+      _height = _height == 50 ? 200 : 50;
+      _color = _color == Colors.blue ? Colors.red : Colors.blue;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Animated Container Example')),
+      body: Center(
+        child: AnimatedContainer(
+          width: _width,
+          height: _height,
+          color: _color,
+          duration: Duration(seconds: 1),
+          child: Center(child: Text('Tap to Change Size')),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _changeSize,
+        tooltip: 'Change Size',
+        child: Icon(Icons.flip),
+      ),
+    );
+  }
+}
+```
+
+#### 使用 `AnimationController` 和 `Tween`
+
+```dart
+class AnimationControllerExample extends StatefulWidget {
+  @override
+  _AnimationControllerExampleState createState() => _AnimationControllerExampleState();
+}
+
+class _AnimationControllerExampleState extends State<AnimationControllerExample> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    _animation = Tween(begin: 0.0, end: 1.0).animate(_controller)
+      ..addListener(() {
+        setState(() {});
+      });
+
+    _controller.forward();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Animation Controller Example')),
+      body: Center(
+        child: Container(
+          width: 200.0,
+          height: 200.0,
+          color: Colors.blue.withOpacity(_animation.value),
+        ),
+      ),
+    );
+  }
+}
+```
+
+### 10. 网络请求与 API 调用
+
+Flutter 支持通过 `http` 包进行网络请求。你可以使用 `http.get`、`http.post` 等方法来与服务器通信。
+
+#### 安装 `http` 包
+
+在 `pubspec.yaml` 文件中添加依赖：
+
+```yaml
+dependencies:
+  http: ^0.13.3
+```
+
+#### 发送 GET 请求
+
+```dart
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+Future<void> fetchData() async {
+  final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts/1'));
+
+  if (response.statusCode == 200) {
+    // 请求成功，解析 JSON 数据
+    var data = json.decode(response.body);
+    print(data);
+  } else {
+    // 请求失败，抛出异常
+    throw Exception('Failed to load post');
+  }
+}
+```
+
+#### 发送 POST 请求
+
+```dart
+Future<void> postData() async {
+  final response = await http.post(
+    Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+    headers: {'Content-Type': 'application/json; charset=UTF-8'},
+    body: jsonEncode({
+      'title': 'foo',
+      'body': 'bar',
+      'userId': 1,
+    }),
+  );
+
+  if (response.statusCode == 201) {
+    // 请求成功，解析返回的数据
+    var data = json.decode(response.body);
+    print(data);
+  } else {
+    // 请求失败，抛出异常
+    throw Exception('Failed to create post');
+  }
+}
+```
+
+### 11. 主题与样式
+
+Flutter 提供了灵活的主题系统，可以轻松地为应用设置全局样式。
+
+#### 创建自定义主题
+
+```dart
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        accentColor: Colors.orange,
+        textTheme: TextTheme(
+          headline1: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          bodyText1: TextStyle
