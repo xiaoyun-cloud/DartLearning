@@ -441,4 +441,7 @@ class MyApp extends StatelessWidget {
           headline1: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           bodyText1: TextStyle
 
+(fontSize: 16),
+        ),
+        buttonTheme: ButtonThemeData()// 添加按钮主题
 //end
