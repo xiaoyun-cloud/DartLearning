@@ -269,46 +269,82 @@ Flutter 提供了强大的动画系统，支持创建平滑的用户界面交互
 #### 基本动画
 
 ```dart
+//定义一个 StatefulWidget，表示该组件的状态会随着时间或用户交互而改变
 class AnimatedContainerExample extends StatefulWidget {
   @override
+  // 创建组件的状态对象，_AnimatedContainerExampleState 是该组件的状态类
   _AnimatedContainerExampleState createState() => _AnimatedContainerExampleState();
 }
 
+// 定义组件的状态类，继承自 State<AnimatedContainerExample>
 class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
+  // 定义容器的初始宽度，默认为50像素
   double _width = 50;
+  
+  // 定义容器的初始高度，默认为50像素
   double _height = 50;
+  
+  // 定义容器的初始背景颜色，默认为蓝色
   Color _color = Colors.blue;
 
+  // 定义一个方法来改变容器的大小和颜色
   void _changeSize() {
+    // 调用 setState 方法通知 Flutter 框架状态已更改，需要重新构建 UI
     setState(() {
+      // 如果当前宽度为50，则更改为200，否则更改为50
       _width = _width == 50 ? 200 : 50;
+      
+      // 如果当前高度为50，则更改为200，否则更改为50
       _height = _height == 50 ? 200 : 50;
+      
+      // 如果当前颜色为蓝色，则更改为红色，否则更改为蓝色
       _color = _color == Colors.blue ? Colors.red : Colors.blue;
     });
   }
 
   @override
+  // 构建组件的UI
   Widget build(BuildContext context) {
     return Scaffold(
+      // 设置应用栏，包含标题
       appBar: AppBar(title: Text('Animated Container Example')),
+      
+      // 设置主体内容，居中显示 AnimatedContainer
       body: Center(
         child: AnimatedContainer(
+          // 动态设置容器的宽度
           width: _width,
+          
+          // 动态设置容器的高度
           height: _height,
+          
+          // 动态设置容器的颜色
           color: _color,
+          
+          // 设置动画持续时间为1秒
           duration: Duration(seconds: 1),
+          
+          // 容器内部居中显示文本
           child: Center(child: Text('Tap to Change Size')),
         ),
       ),
+      
+      // 设置浮动按钮，点击时触发 _changeSize 方法
       floatingActionButton: FloatingActionButton(
+        // 点击按钮时调用 _changeSize 方法
         onPressed: _changeSize,
+        
+        // 设置按钮提示信息
         tooltip: 'Change Size',
+        
+        // 设置按钮图标
         child: Icon(Icons.flip),
       ),
     );
   }
 }
 ```
+
 
 #### 使用 `AnimationController` 和 `Tween`
 
