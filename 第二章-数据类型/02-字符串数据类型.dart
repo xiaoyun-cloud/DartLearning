@@ -55,4 +55,27 @@ void main() {
   // 查找字符串最后一次出现的位置
   print(strFind.lastIndexOf(
       'o')); // 找‘o’ ,‘lastIndexOf’是查找字符串最后一次出现的位置的方法,返回一个子串在父串中最后一次出现的位置(人话:从右往左找)
+
+  //键值对介绍
+  var person = {
+    // 键类型为String，值类型也为String
+    // 键:    值
+    'name': 'Tom',
+    'age': '22',
+    'sex': 'boy'
+  };
+
+  Map<int, String> cases = {
+    // 键类型为int，值类型为String
+    5: 'Liu',
+    10: 'Zhang',
+    18: 'Wang',
+  };
+
+  print(person['name']); // Tom，person中键name对应的值
+  print(cases[10]); // Zhang，cases中键10对应的值
+
+  /*
+  这里的person变量被赋值后，Dart会将它的类型定义为Map<String, String>，cases变量则为Map<int, String>类型，<>中的两位分别表示键和值的类型。通过person['name']就可以得到person中键name对应的值。
+  */
 }
