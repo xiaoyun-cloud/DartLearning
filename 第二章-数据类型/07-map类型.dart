@@ -57,3 +57,9 @@ void main() {
       (key, value) => value == '男'); //代码逻辑: 如果value等于男，则删除,也可以将条件改为 key == '大学'
   print(map2);
 }
+
+//总结:
+//map类型是键-值对类型，键是唯一的，值可以重复
+//通常被用来存储键值对数据,称之为哈希或者字典
+//map类型的声明有三种方式
+//map类型的常用方法有:containsKey,containsValue,remove,putIfAbsent,keys,values,entries,removeWhere
